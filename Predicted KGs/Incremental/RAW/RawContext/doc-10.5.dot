@@ -1,0 +1,19 @@
+strict digraph "doc-10.5" {
+	graph [name="doc-10.5"];
+	"request device takeover bid"	[attrs="{'type': 'Activity', 'label': 'request device takeover bid'}"];
+	"send tender for equipment takeover"	[attrs="{'type': 'Activity', 'label': 'send tender for equipment takeover'}"];
+	"request device takeover bid" -> "send tender for equipment takeover"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	mpon	[attrs="{'type': 'Actor', 'label': 'mpon'}"];
+	"request device takeover bid" -> mpon	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"place order"	[attrs="{'type': 'Activity', 'label': 'place order'}"];
+	"send tender for equipment takeover" -> "place order"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	mpoo	[attrs="{'type': 'Actor', 'label': 'mpoo'}"];
+	"send tender for equipment takeover" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm order"	[attrs="{'type': 'Activity', 'label': 'confirm order'}"];
+	"place order" -> "confirm order"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"place order" -> mpon	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send master data"	[attrs="{'type': 'Activity', 'label': 'send master data'}"];
+	"confirm order" -> "send master data"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm order" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send master data" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

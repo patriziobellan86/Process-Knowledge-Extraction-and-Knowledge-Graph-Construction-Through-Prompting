@@ -1,0 +1,19 @@
+strict digraph "doc-10.12" {
+	graph [name="doc-10.12"];
+	"ec notifies inq of master data change"	[attrs="{'type': 'Activity', 'label': 'ec notifies inq of master data change'}"];
+	"inq notifies ip of change"	[attrs="{'type': 'Activity', 'label': 'inq notifies ip of change'}"];
+	"ec notifies inq of master data change" -> "inq notifies ip of change"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	ec	[attrs="{'type': 'Actor', 'label': 'ec'}"];
+	"ec notifies inq of master data change" -> ec	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inq notifies ip of change" -> "ec notifies inq of master data change"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	inq	[attrs="{'type': 'Actor', 'label': 'inq'}"];
+	"inq notifies ip of change" -> inq	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"ip checks if master data can be changed at desired time"	[attrs="{'type': 'Activity', 'label': 'ip checks if master data can be changed at desired time'}"];
+	"ip checks if master data can be changed at desired time" -> "inq notifies ip of change"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ip, NOT DEFINED"	[attrs="{'type': 'Actor', 'label': 'ip, NOT DEFINED'}"];
+	"ip checks if master data can be changed at desired time" -> "ip, NOT DEFINED"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"ip confirms or rejects inq changes"	[attrs="{'type': 'Activity', 'label': 'ip confirms or rejects inq changes'}"];
+	"ip confirms or rejects inq changes" -> "ip checks if master data can be changed at desired time"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	ip	[attrs="{'type': 'Actor', 'label': 'ip'}"];
+	"ip confirms or rejects inq changes" -> ip	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

@@ -1,0 +1,23 @@
+strict digraph "doc-3.7" {
+	graph [name="doc-3.7"];
+	"search the police report"	[attrs="{'type': 'Activity', 'label': 'search the police report'}"];
+	"put in a file"	[attrs="{'type': 'Activity', 'label': 'put in a file'}"];
+	"search the police report" -> "put in a file"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"search the police report" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"calculate an initial claim estimate"	[attrs="{'type': 'Activity', 'label': 'calculate an initial claim estimate'}"];
+	"put in a file" -> "calculate an initial claim estimate"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"put in a file" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"create an action plan"	[attrs="{'type': 'Activity', 'label': 'create an action plan'}"];
+	"calculate an initial claim estimate" -> "create an action plan"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the claims handler"	[attrs="{'type': 'Actor', 'label': 'the claims handler'}"];
+	"calculate an initial claim estimate" -> "the claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"try to negotiate a settlement"	[attrs="{'type': 'Activity', 'label': 'try to negotiate a settlement'}"];
+	"create an action plan" -> "try to negotiate a settlement"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create an action plan" -> "the claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the claimant"	[attrs="{'type': 'Activity', 'label': 'inform the claimant'}"];
+	"try to negotiate a settlement" -> "inform the claimant"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the claims manager"	[attrs="{'type': 'Actor', 'label': 'the claims manager'}"];
+	"try to negotiate a settlement" -> "the claims manager"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the claimant" -> "the claims manager"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

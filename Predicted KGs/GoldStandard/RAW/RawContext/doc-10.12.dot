@@ -1,0 +1,20 @@
+strict digraph "doc-10.12" {
+	graph [name="doc-10.12"];
+	"tell about the change of his master data"	[attrs="{'type': 'Activity', 'label': 'tell about the change of his master data'}"];
+	"notify the change"	[attrs="{'type': 'Activity', 'label': 'notify the change'}"];
+	"tell about the change of his master data" -> "notify the change"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ec (tell about the change of his master data)"	[attrs="{'type': 'Actor', 'label': 'ec (tell about the change of his master data)'}"];
+	"tell about the change of his master data" -> "ec (tell about the change of his master data)"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	check	[attrs="{'type': 'Activity', 'label': 'check'}"];
+	"notify the change" -> check	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inq (notify the change)"	[attrs="{'type': 'Actor', 'label': 'inq (notify the change)'}"];
+	"notify the change" -> "inq (notify the change)"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm the changes of the inq"	[attrs="{'type': 'Activity', 'label': 'confirm the changes of the inq'}"];
+	check -> "confirm the changes of the inq"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the changes of the inq"	[attrs="{'type': 'Activity', 'label': 'reject the changes of the inq'}"];
+	check -> "reject the changes of the inq"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ip (check; confirm the changes of the inq; reject the changes of the inq)"	[attrs="{'type': 'Actor', 'label': 'ip (check; confirm the changes of the inq; reject the changes of the inq)'}"];
+	check -> "ip (check; confirm the changes of the inq; reject the changes of the inq)"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"not defined (confirm)"	[attrs="{'type': 'Actor', 'label': 'not defined (confirm)'}"];
+	"confirm the changes of the inq" -> "not defined (confirm)"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

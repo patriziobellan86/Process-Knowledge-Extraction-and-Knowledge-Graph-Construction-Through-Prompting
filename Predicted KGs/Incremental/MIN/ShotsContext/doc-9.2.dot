@@ -1,0 +1,26 @@
+strict digraph "doc-9.2" {
+	graph [name="doc-9.2"];
+	"send a mortgage offer"	[attrs="{'type': 'Activity', 'label': 'send a mortgage offer'}"];
+	"call or write back declining the mortgage"	[attrs="{'type': 'Activity', 'label': 'call or write back declining the mortgage'}"];
+	"send a mortgage offer" -> "call or write back declining the mortgage"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"customer service representative"	[attrs="{'type': 'Actor', 'label': 'customer service representative'}"];
+	"send a mortgage offer" -> "customer service representative"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update case details"	[attrs="{'type': 'Activity', 'label': 'update case details'}"];
+	"call or write back declining the mortgage" -> "update case details"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	customer	[attrs="{'type': 'Actor', 'label': 'customer'}"];
+	"call or write back declining the mortgage" -> customer	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"archive and cancel"	[attrs="{'type': 'Activity', 'label': 'archive and cancel'}"];
+	"update case details" -> "archive and cancel"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"update case details" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"move to administration for completion"	[attrs="{'type': 'Activity', 'label': 'move to administration for completion'}"];
+	"archive and cancel" -> "move to administration for completion"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"archive and cancel" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"generate a message requesting outstanding documents"	[attrs="{'type': 'Activity', 'label': 'generate a message requesting outstanding documents'}"];
+	"move to administration for completion" -> "generate a message requesting outstanding documents"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"move to administration for completion" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update case details prior to archive and cancellation"	[attrs="{'type': 'Activity', 'label': 'update case details prior to archive and cancellation'}"];
+	"generate a message requesting outstanding documents" -> "update case details prior to archive and cancellation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"generate a message requesting outstanding documents" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update case details prior to archive and cancellation" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

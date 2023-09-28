@@ -1,0 +1,25 @@
+strict digraph "doc-10.9" {
+	graph [name="doc-10.9"];
+	"request change"	[attrs="{'type': 'Activity', 'label': 'request change'}"];
+	"review change request"	[attrs="{'type': 'Activity', 'label': 'review change request'}"];
+	"request change" -> "review change request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"sp/pu/go"	[attrs="{'type': 'Actor', 'label': 'sp/pu/go'}"];
+	"request change" -> "sp/pu/go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject change request"	[attrs="{'type': 'Activity', 'label': 'reject change request'}"];
+	"review change request" -> "reject change request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	mpo	[attrs="{'type': 'Actor', 'label': 'mpo'}"];
+	"review change request" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm change request"	[attrs="{'type': 'Activity', 'label': 'confirm change request'}"];
+	"reject change request" -> "confirm change request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject change request" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"perform measuring point change"	[attrs="{'type': 'Activity', 'label': 'perform measuring point change'}"];
+	"confirm change request" -> "perform measuring point change"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm change request" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"report implementation"	[attrs="{'type': 'Activity', 'label': 'report implementation'}"];
+	"perform measuring point change" -> "report implementation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"perform measuring point change" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"notify of failure"	[attrs="{'type': 'Activity', 'label': 'notify of failure'}"];
+	"report implementation" -> "notify of failure"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"report implementation" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"notify of failure" -> mpo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

@@ -1,0 +1,37 @@
+strict digraph "doc-9.2" {
+	graph [name="doc-9.2"];
+	"send a mortgage offer"	[attrs="{'type': 'Activity', 'label': 'send a mortgage offer'}"];
+	"wait for a reply"	[attrs="{'type': 'Activity', 'label': 'wait for a reply'}"];
+	"send a mortgage offer" -> "wait for a reply"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the customer service representative"	[attrs="{'type': 'Actor', 'label': 'the customer service representative'}"];
+	"send a mortgage offer" -> "the customer service representative"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update the case details"	[attrs="{'type': 'Activity', 'label': 'update the case details'}"];
+	"wait for a reply" -> "update the case details"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"archive the work"	[attrs="{'type': 'Activity', 'label': 'archive the work'}"];
+	"wait for a reply" -> "archive the work"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"cancel the work"	[attrs="{'type': 'Activity', 'label': 'cancel the work'}"];
+	"wait for a reply" -> "cancel the work"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"move the case"	[attrs="{'type': 'Activity', 'label': 'move the case'}"];
+	"wait for a reply" -> "move the case"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"wait for a reply" -> "the customer service representative"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"archive the mortgage offer"	[attrs="{'type': 'Activity', 'label': 'archive the mortgage offer'}"];
+	"update the case details" -> "archive the mortgage offer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"cancel the mortgage offer"	[attrs="{'type': 'Activity', 'label': 'cancel the mortgage offer'}"];
+	"update the case details" -> "cancel the mortgage offer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"update the case details" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"archive the work" -> "cancel the work"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"archive the work" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"cancel the work" -> "archive the mortgage offer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"cancel the work" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"generate a message"	[attrs="{'type': 'Activity', 'label': 'generate a message'}"];
+	"move the case" -> "generate a message"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	administration	[attrs="{'type': 'Actor', 'label': 'administration'}"];
+	"move the case" -> administration	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"generate a message" -> "update the case details"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"generate a message" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"archive the mortage offer"	[attrs="{'type': 'Activity', 'label': 'archive the mortage offer'}"];
+	"archive the mortage offer" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"cancel the mortage offer"	[attrs="{'type': 'Activity', 'label': 'cancel the mortage offer'}"];
+	"cancel the mortage offer" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

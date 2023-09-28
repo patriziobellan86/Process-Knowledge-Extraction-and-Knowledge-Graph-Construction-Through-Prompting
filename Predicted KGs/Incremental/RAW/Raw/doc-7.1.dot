@@ -1,0 +1,25 @@
+strict digraph "doc-7.1" {
+	graph [name="doc-7.1"];
+	"manager checks open leads"	[attrs="{'type': 'Activity', 'label': 'manager checks open leads'}"];
+	"manager selects top five leads"	[attrs="{'type': 'Activity', 'label': 'manager selects top five leads'}"];
+	"manager checks open leads" -> "manager selects top five leads"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	manager	[attrs="{'type': 'Actor', 'label': 'manager'}"];
+	"manager checks open leads" -> manager	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"manager tells sales assistant to call contact person"	[attrs="{'type': 'Activity', 'label': 'manager tells sales assistant to call contact person'}"];
+	"manager selects top five leads" -> "manager tells sales assistant to call contact person"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"manager selects top five leads" -> manager	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"sales assistant calls each customer"	[attrs="{'type': 'Activity', 'label': 'sales assistant calls each customer'}"];
+	"manager tells sales assistant to call contact person" -> "sales assistant calls each customer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"manager tells sales assistant to call contact person" -> manager	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"sales assistant sends note to manager if someone is interested"	[attrs="{'type': 'Activity', 'label': 'sales assistant sends note to manager if someone is interested'}"];
+	"sales assistant calls each customer" -> "sales assistant sends note to manager if someone is interested"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"sales assistant"	[attrs="{'type': 'Actor', 'label': 'sales assistant'}"];
+	"sales assistant calls each customer" -> "sales assistant"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"manager processes lead"	[attrs="{'type': 'Activity', 'label': 'manager processes lead'}"];
+	"sales assistant sends note to manager if someone is interested" -> "manager processes lead"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"sales assistant sends note to manager if someone is interested" -> "sales assistant"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"manager calls next customer"	[attrs="{'type': 'Activity', 'label': 'manager calls next customer'}"];
+	"manager processes lead" -> "manager calls next customer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"manager processes lead" -> manager	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"manager calls next customer" -> manager	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

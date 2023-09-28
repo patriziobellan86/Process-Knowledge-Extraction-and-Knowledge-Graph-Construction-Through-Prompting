@@ -1,0 +1,34 @@
+strict digraph "doc-1.2" {
+	graph [name="doc-1.2"];
+	"bring in a defective computer"	[attrs="{'type': 'Activity', 'label': 'bring in a defective computer'}"];
+	"check the defect"	[attrs="{'type': 'Activity', 'label': 'check the defect'}"];
+	"bring in a defective computer" -> "check the defect"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"a customer"	[attrs="{'type': 'Actor', 'label': 'a customer'}"];
+	"bring in a defective computer" -> "a customer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"hand out a repair cost calculation"	[attrs="{'type': 'Activity', 'label': 'hand out a repair cost calculation'}"];
+	"check the defect" -> "hand out a repair cost calculation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the crs"	[attrs="{'type': 'Actor', 'label': 'the crs'}"];
+	"check the defect" -> "the crs"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"hand out a repair cost calculation" -> "the crs"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"take computer"	[attrs="{'type': 'Activity', 'label': 'take computer'}"];
+	"check the hardware"	[attrs="{'type': 'Activity', 'label': 'check the hardware'}"];
+	"take computer" -> "check the hardware"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"take computer" -> "a customer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"repair the hardware"	[attrs="{'type': 'Activity', 'label': 'repair the hardware'}"];
+	"check the hardware" -> "repair the hardware"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"check the hardware" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the software"	[attrs="{'type': 'Activity', 'label': 'check the software'}"];
+	"repair the hardware" -> "check the software"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"repair the hardware" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"configure the software"	[attrs="{'type': 'Activity', 'label': 'configure the software'}"];
+	"check the software" -> "configure the software"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"check the software" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"test the proper system functionality"	[attrs="{'type': 'Activity', 'label': 'test the proper system functionality'}"];
+	"configure the software" -> "test the proper system functionality"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"configure the software" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"execute another arbitrary repair activity"	[attrs="{'type': 'Activity', 'label': 'execute another arbitrary repair activity'}"];
+	"test the proper system functionality" -> "execute another arbitrary repair activity"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"test the proper system functionality" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"execute another arbitrary repair activity" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

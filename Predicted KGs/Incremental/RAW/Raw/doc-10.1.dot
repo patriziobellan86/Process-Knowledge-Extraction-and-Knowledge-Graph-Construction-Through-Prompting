@@ -1,0 +1,20 @@
+strict digraph "doc-10.1" {
+	graph [name="doc-10.1"];
+	"mpon sends dismissal to mpoo"	[attrs="{'type': 'Activity', 'label': 'mpon sends dismissal to mpoo'}"];
+	"mpoo reviews dismissal"	[attrs="{'type': 'Activity', 'label': 'mpoo reviews dismissal'}"];
+	"mpon sends dismissal to mpoo" -> "mpoo reviews dismissal"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"mpoo opposes dismissal of mpon"	[attrs="{'type': 'Activity', 'label': 'mpoo opposes dismissal of mpon'}"];
+	"mpoo reviews dismissal" -> "mpoo opposes dismissal of mpon"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"mpoo confirms dismissal of mpon"	[attrs="{'type': 'Activity', 'label': 'mpoo confirms dismissal of mpon'}"];
+	"mpoo opposes dismissal of mpon" -> "mpoo confirms dismissal of mpon"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"sending the dismissal"	[attrs="{'type': 'Activity', 'label': 'sending the dismissal'}"];
+	mpon	[attrs="{'type': 'Actor', 'label': 'mpon'}"];
+	"sending the dismissal" -> mpon	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reviewing the dismissal"	[attrs="{'type': 'Activity', 'label': 'reviewing the dismissal'}"];
+	mpoo	[attrs="{'type': 'Actor', 'label': 'mpoo'}"];
+	"reviewing the dismissal" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"opposing the dismissal of mpon"	[attrs="{'type': 'Activity', 'label': 'opposing the dismissal of mpon'}"];
+	"opposing the dismissal of mpon" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirming the dismissal of mpon"	[attrs="{'type': 'Activity', 'label': 'confirming the dismissal of mpon'}"];
+	"confirming the dismissal of mpon" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

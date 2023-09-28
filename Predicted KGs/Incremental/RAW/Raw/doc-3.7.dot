@@ -1,0 +1,23 @@
+strict digraph "doc-3.7" {
+	graph [name="doc-3.7"];
+	"search police report in database"	[attrs="{'type': 'Activity', 'label': 'search police report in database'}"];
+	"put police report and claim documentation in file"	[attrs="{'type': 'Activity', 'label': 'put police report and claim documentation in file'}"];
+	"search police report in database" -> "put police report and claim documentation in file"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"search police report in database" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"calculate initial claim estimate"	[attrs="{'type': 'Activity', 'label': 'calculate initial claim estimate'}"];
+	"put police report and claim documentation in file" -> "calculate initial claim estimate"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"claims handler"	[attrs="{'type': 'Actor', 'label': 'claims handler'}"];
+	"put police report and claim documentation in file" -> "claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"create action plan based on action plan checklist"	[attrs="{'type': 'Activity', 'label': 'create action plan based on action plan checklist'}"];
+	"calculate initial claim estimate" -> "create action plan based on action plan checklist"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"calculate initial claim estimate" -> "claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"negotiate settlement on claim estimate"	[attrs="{'type': 'Activity', 'label': 'negotiate settlement on claim estimate'}"];
+	"create action plan based on action plan checklist" -> "negotiate settlement on claim estimate"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create action plan based on action plan checklist" -> "claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform claimant of outcome"	[attrs="{'type': 'Activity', 'label': 'inform claimant of outcome'}"];
+	"negotiate settlement on claim estimate" -> "inform claimant of outcome"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"claims manager"	[attrs="{'type': 'Actor', 'label': 'claims manager'}"];
+	"negotiate settlement on claim estimate" -> "claims manager"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform claimant of outcome" -> "claims manager"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

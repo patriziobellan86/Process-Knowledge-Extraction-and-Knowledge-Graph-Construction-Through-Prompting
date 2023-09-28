@@ -1,0 +1,29 @@
+strict digraph "doc-10.8" {
+	graph [name="doc-10.8"];
+	deregister	[attrs="{'type': 'Activity', 'label': 'deregister'}"];
+	"verify the deregistration"	[attrs="{'type': 'Activity', 'label': 'verify the deregistration'}"];
+	deregister -> "verify the deregistration"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	mspo	[attrs="{'type': 'Actor', 'label': 'mspo'}"];
+	deregister -> mspo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject the deregistration of the mspo"	[attrs="{'type': 'Activity', 'label': 'reject the deregistration of the mspo'}"];
+	"verify the deregistration" -> "reject the deregistration of the mspo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the deregistration of the mspo"	[attrs="{'type': 'Activity', 'label': 'confirm the deregistration of the mspo'}"];
+	"verify the deregistration" -> "confirm the deregistration of the mspo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	go	[attrs="{'type': 'Actor', 'label': 'go'}"];
+	"verify the deregistration" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assign the go"	[attrs="{'type': 'Activity', 'label': 'assign the go'}"];
+	"reject the deregistration of the mspo" -> "assign the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the deregistration of the mspo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm the deregistration of the mspo" -> "assign the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the deregistration of the mspo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform about the end of the assignment and the beginning of the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'inform about the end of the assignment and the beginning of the assignment of the go'}"];
+	"assign the go" -> "inform about the end of the assignment and the beginning of the assignment of the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"informs about the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'informs about the assignment of the go'}"];
+	"assign the go" -> "informs about the assignment of the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform about the end of the assignment and the beginning of the assignment of the go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs about the assignment of the go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	sp	[attrs="{'type': 'Actor', 'label': 'sp'}"];
+	"informs about the assignment of the go" -> sp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assign go"	[attrs="{'type': 'Activity', 'label': 'assign go'}"];
+	"assign go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

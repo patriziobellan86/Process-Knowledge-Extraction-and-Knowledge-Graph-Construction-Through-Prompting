@@ -1,0 +1,32 @@
+strict digraph "doc-1.1" {
+	graph [name="doc-1.1"];
+	"create process instance"	[attrs="{'type': 'Activity', 'label': 'create process instance'}"];
+	"reject/accept order"	[attrs="{'type': 'Activity', 'label': 'reject/accept order'}"];
+	"create process instance" -> "reject/accept order"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"sales department"	[attrs="{'type': 'Actor', 'label': 'sales department'}"];
+	"create process instance" -> "sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform storehouse and engineering department"	[attrs="{'type': 'Activity', 'label': 'inform storehouse and engineering department'}"];
+	"reject/accept order" -> "inform storehouse and engineering department"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject/accept order" -> "sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"process part list"	[attrs="{'type': 'Activity', 'label': 'process part list'}"];
+	"inform storehouse and engineering department" -> "process part list"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform storehouse and engineering department" -> "sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reserve/back-order parts"	[attrs="{'type': 'Activity', 'label': 'reserve/back-order parts'}"];
+	"process part list" -> "reserve/back-order parts"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	storehouse	[attrs="{'type': 'Actor', 'label': 'storehouse'}"];
+	"process part list" -> storehouse	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"prepare for assembling"	[attrs="{'type': 'Activity', 'label': 'prepare for assembling'}"];
+	"reserve/back-order parts" -> "prepare for assembling"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reserve/back-order parts" -> storehouse	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assemble bicycle"	[attrs="{'type': 'Activity', 'label': 'assemble bicycle'}"];
+	"prepare for assembling" -> "assemble bicycle"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"engineering department"	[attrs="{'type': 'Actor', 'label': 'engineering department'}"];
+	"prepare for assembling" -> "engineering department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"ship bicycle"	[attrs="{'type': 'Activity', 'label': 'ship bicycle'}"];
+	"assemble bicycle" -> "ship bicycle"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assemble bicycle" -> "engineering department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"finish process instance"	[attrs="{'type': 'Activity', 'label': 'finish process instance'}"];
+	"ship bicycle" -> "finish process instance"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ship bicycle" -> "sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"finish process instance" -> "sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

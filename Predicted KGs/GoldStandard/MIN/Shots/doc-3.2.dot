@@ -1,0 +1,22 @@
+strict digraph "doc-3.2" {
+	graph [name="doc-3.2"];
+	"check the files which have yet to be processed"	[attrs="{'type': 'Activity', 'label': 'check the files which have yet to be processed'}"];
+	"initiate a search"	[attrs="{'type': 'Activity', 'label': 'initiate a search'}"];
+	"check the files which have yet to be processed" -> "initiate a search"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"check the files which have yet to be processed" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"track the files"	[attrs="{'type': 'Activity', 'label': 'track the files'}"];
+	"initiate a search" -> "track the files"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"initiate a search" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"hand files"	[attrs="{'type': 'Activity', 'label': 'hand files'}"];
+	"track the files" -> "hand files"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"track the files" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"distribute the judgeis lawlist"	[attrs="{'type': 'Activity', 'label': 'distribute the judgeis lawlist'}"];
+	"hand files" -> "distribute the judgeis lawlist"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the associate"	[attrs="{'type': 'Actor', 'label': 'the associate'}"];
+	"hand files" -> "the associate"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"conduct the directions hearing"	[attrs="{'type': 'Activity', 'label': 'conduct the directions hearing'}"];
+	"distribute the judgeis lawlist" -> "conduct the directions hearing"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"distribute the judgeis lawlist" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"conduct the directions hearing" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

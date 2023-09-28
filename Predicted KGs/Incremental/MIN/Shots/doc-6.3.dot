@@ -1,0 +1,26 @@
+strict digraph "doc-6.3" {
+	graph [name="doc-6.3"];
+	"determine necessary parts and quantities"	[attrs="{'type': 'Activity', 'label': 'determine necessary parts and quantities'}"];
+	"enter into production planning system"	[attrs="{'type': 'Activity', 'label': 'enter into production planning system'}"];
+	"determine necessary parts and quantities" -> "enter into production planning system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"one of my masters"	[attrs="{'type': 'Actor', 'label': 'one of my masters'}"];
+	"determine necessary parts and quantities" -> "one of my masters"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"transfer data manually"	[attrs="{'type': 'Activity', 'label': 'transfer data manually'}"];
+	"enter into production planning system" -> "transfer data manually"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"enter into production planning system" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"decide if parts need to be procured"	[attrs="{'type': 'Activity', 'label': 'decide if parts need to be procured'}"];
+	"transfer data manually" -> "decide if parts need to be procured"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"transfer data manually" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive notice from system"	[attrs="{'type': 'Activity', 'label': 'receive notice from system'}"];
+	"decide if parts need to be procured" -> "receive notice from system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"decide if parts need to be procured" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"implement production"	[attrs="{'type': 'Activity', 'label': 'implement production'}"];
+	"receive notice from system" -> "implement production"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"receive notice from system" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check order for quality"	[attrs="{'type': 'Activity', 'label': 'check order for quality'}"];
+	"implement production" -> "check order for quality"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"an employee"	[attrs="{'type': 'Actor', 'label': 'an employee'}"];
+	"implement production" -> "an employee"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check order for quality" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

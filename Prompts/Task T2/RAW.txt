@@ -1,0 +1,4 @@
+Q: For each activity in this list: [{activitylist}] of this process model description:
+"""{text}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:

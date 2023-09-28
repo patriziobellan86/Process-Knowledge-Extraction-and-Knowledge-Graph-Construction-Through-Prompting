@@ -1,0 +1,32 @@
+strict digraph "doc-9.1" {
+	graph [name="doc-9.1"];
+	"back up the database"	[attrs="{'type': 'Activity', 'label': 'back up the database'}"];
+	"check the database"	[attrs="{'type': 'Activity', 'label': 'check the database'}"];
+	"back up the database" -> "check the database"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"back up the database" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the crm system"	[attrs="{'type': 'Activity', 'label': 'check the crm system'}"];
+	"check the database" -> "check the crm system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"check the database" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"register all defaulting accounts and customers"	[attrs="{'type': 'Activity', 'label': 'register all defaulting accounts and customers'}"];
+	"check the crm system" -> "register all defaulting accounts and customers"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reconcile with the existing account defaulters table"	[attrs="{'type': 'Activity', 'label': 'reconcile with the existing account defaulters table'}"];
+	"check the crm system" -> "reconcile with the existing account defaulters table"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"check the crm system" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"produce another table of defaulting accounts"	[attrs="{'type': 'Activity', 'label': 'produce another table of defaulting accounts'}"];
+	"register all defaulting accounts and customers" -> "produce another table of defaulting accounts"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"register all defaulting accounts and customers" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send another table of defaulting accounts"	[attrs="{'type': 'Activity', 'label': 'send another table of defaulting accounts'}"];
+	"produce another table of defaulting accounts" -> "send another table of defaulting accounts"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"produce another table of defaulting accounts" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send an alert"	[attrs="{'type': 'Activity', 'label': 'send an alert'}"];
+	"send another table of defaulting accounts" -> "send an alert"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send another table of defaulting accounts" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send an alert" -> "check the crm system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send an alert" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send a message"	[attrs="{'type': 'Activity', 'label': 'send a message'}"];
+	"reconcile with the existing account defaulters table" -> "send a message"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reconcile with the existing account defaulters table" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"the supervisor"	[attrs="{'type': 'Actor', 'label': 'the supervisor'}"];
+	"send a message" -> "the supervisor"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

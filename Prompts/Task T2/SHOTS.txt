@@ -1,0 +1,18 @@
+Q: For each activity in this list: [{example1_activitylist}] of this process model description:
+"""{example1_process_description}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:
+{example1_performslist}
+
+
+Q: For each activity in this list: [{example2_activitylist}] of this process model description:
+"""{example2_process_description}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:
+{example2_performslist}
+
+
+Q: For each activity in this list: [{activitylist}] of this process model description:
+"""{text}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:

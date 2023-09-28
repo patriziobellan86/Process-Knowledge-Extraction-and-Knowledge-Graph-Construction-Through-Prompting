@@ -1,0 +1,34 @@
+strict digraph "doc-6.3" {
+	graph [name="doc-6.3"];
+	"get a new order"	[attrs="{'type': 'Activity', 'label': 'get a new order'}"];
+	"determine the necessary parts and quantities"	[attrs="{'type': 'Activity', 'label': 'determine the necessary parts and quantities'}"];
+	"get a new order" -> "determine the necessary parts and quantities"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the sales department"	[attrs="{'type': 'Actor', 'label': 'the sales department'}"];
+	"get a new order" -> "the sales department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"enter into production planning system"	[attrs="{'type': 'Activity', 'label': 'enter into production planning system'}"];
+	"determine the necessary parts and quantities" -> "enter into production planning system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"one of my masters"	[attrs="{'type': 'Actor', 'label': 'one of my masters'}"];
+	"determine the necessary parts and quantities" -> "one of my masters"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"create a list of parts to be procured"	[attrs="{'type': 'Activity', 'label': 'create a list of parts to be procured'}"];
+	"enter into production planning system" -> "create a list of parts to be procured"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	it	[attrs="{'type': 'Actor', 'label': 'it'}"];
+	"enter into production planning system" -> it	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"transfer data manually"	[attrs="{'type': 'Activity', 'label': 'transfer data manually'}"];
+	"create a list of parts to be procured" -> "transfer data manually"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create a list of parts to be procured" -> it	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"decide whether any parts are missing"	[attrs="{'type': 'Activity', 'label': 'decide whether any parts are missing'}"];
+	"transfer data manually" -> "decide whether any parts are missing"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	we	[attrs="{'type': 'Actor', 'label': 'we'}"];
+	"transfer data manually" -> we	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive a notice from the system"	[attrs="{'type': 'Activity', 'label': 'receive a notice from the system'}"];
+	"decide whether any parts are missing" -> "receive a notice from the system"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"decide whether any parts are missing" -> we	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"take care of the implementation"	[attrs="{'type': 'Activity', 'label': 'take care of the implementation'}"];
+	"receive a notice from the system" -> "take care of the implementation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"receive a notice from the system" -> we	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the order for quality"	[attrs="{'type': 'Activity', 'label': 'check the order for quality'}"];
+	"take care of the implementation" -> "check the order for quality"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"an employee"	[attrs="{'type': 'Actor', 'label': 'an employee'}"];
+	"take care of the implementation" -> "an employee"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the order for quality" -> we	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

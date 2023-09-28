@@ -1,0 +1,34 @@
+strict digraph "doc-10.8" {
+	graph [name="doc-10.8"];
+	"deregister at the go"	[attrs="{'type': 'Activity', 'label': 'deregister at the go'}"];
+	"verify deregistration"	[attrs="{'type': 'Activity', 'label': 'verify deregistration'}"];
+	"deregister at the go" -> "verify deregistration"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject/preliminarily confirm deregistration"	[attrs="{'type': 'Activity', 'label': 'reject/preliminarily confirm deregistration'}"];
+	"verify deregistration" -> "reject/preliminarily confirm deregistration"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assign go as msp"	[attrs="{'type': 'Activity', 'label': 'assign go as msp'}"];
+	"reject/preliminarily confirm deregistration" -> "assign go as msp"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"reject/preliminarily confirm deregistration" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform mspo of end of assignment and beginning of go assignment"	[attrs="{'type': 'Activity', 'label': 'inform mspo of end of assignment and beginning of go assignment'}"];
+	"assign go as msp" -> "inform mspo of end of assignment and beginning of go assignment"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform mpo of go assignment"	[attrs="{'type': 'Activity', 'label': 'inform mpo of go assignment'}"];
+	"inform mspo of end of assignment and beginning of go assignment" -> "inform mpo of go assignment"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform sp of go assignment"	[attrs="{'type': 'Activity', 'label': 'inform sp of go assignment'}"];
+	"inform mpo of go assignment" -> "inform sp of go assignment"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deregisters at the go"	[attrs="{'type': 'Activity', 'label': 'deregisters at the go'}"];
+	mspo	[attrs="{'type': 'Actor', 'label': 'mspo'}"];
+	"deregisters at the go" -> mspo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"verifies deregistration"	[attrs="{'type': 'Activity', 'label': 'verifies deregistration'}"];
+	go	[attrs="{'type': 'Actor', 'label': 'go'}"];
+	"verifies deregistration" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"rejects/preliminarily confirms deregistration"	[attrs="{'type': 'Activity', 'label': 'rejects/preliminarily confirms deregistration'}"];
+	"rejects/preliminarily confirms deregistration" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assigns go as msp"	[attrs="{'type': 'Activity', 'label': 'assigns go as msp'}"];
+	"assigns go as msp" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs mspo of end of assignment and beginning of go assignment"	[attrs="{'type': 'Activity', 'label': 'informs mspo of end of assignment and beginning of go assignment'}"];
+	"informs mspo of end of assignment and beginning of go assignment" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs mpo of go assignment"	[attrs="{'type': 'Activity', 'label': 'informs mpo of go assignment'}"];
+	"informs mpo of go assignment" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs sp of go assignment"	[attrs="{'type': 'Activity', 'label': 'informs sp of go assignment'}"];
+	"informs sp of go assignment" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

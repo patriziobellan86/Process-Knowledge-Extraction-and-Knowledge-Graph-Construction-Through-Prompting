@@ -1,0 +1,18 @@
+Q: Considering the context of Business Process Management. For each activity in this list: [{example1_activitylist}] of this process model description:
+"""{example1_process_description}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:
+{example1_performslist}
+
+
+Q: Considering the context of Business Process Management, lists all the actors that are responsible for the execution of each of these activities: [{example2_activitylist}] of the process model described in this process description:
+"""{example2_process_description}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:
+{example2_performslist}
+
+
+Q: Considering the context of Business Process Management, lists all the actors that are responsible for the execution of each of these activities: [{activitylist}] of the process model described in this process description:
+"""{text}"""
+list the actor responsible for its execution. If the text does not describe any actor responsible for the execution, answer "NOT DEFINED".
+A:

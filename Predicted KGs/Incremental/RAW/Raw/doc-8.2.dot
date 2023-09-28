@@ -1,0 +1,28 @@
+strict digraph "doc-8.2" {
+	graph [name="doc-8.2"];
+	"create job description"	[attrs="{'type': 'Activity', 'label': 'create job description'}"];
+	"ask department for clarification"	[attrs="{'type': 'Activity', 'label': 'ask department for clarification'}"];
+	"create job description" -> "ask department for clarification"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"hr clerk"	[attrs="{'type': 'Actor', 'label': 'hr clerk'}"];
+	"create job description" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"submit job description for consideration"	[attrs="{'type': 'Activity', 'label': 'submit job description for consideration'}"];
+	"ask department for clarification" -> "submit job description for consideration"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ask department for clarification" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive approval/rejection"	[attrs="{'type': 'Activity', 'label': 'receive approval/rejection'}"];
+	"submit job description for consideration" -> "receive approval/rejection"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"submit job description for consideration" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"make corrections"	[attrs="{'type': 'Activity', 'label': 'make corrections'}"];
+	"receive approval/rejection" -> "make corrections"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"receive approval/rejection" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"resubmit job description"	[attrs="{'type': 'Activity', 'label': 'resubmit job description'}"];
+	"make corrections" -> "resubmit job description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"make corrections" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive approval"	[attrs="{'type': 'Activity', 'label': 'receive approval'}"];
+	"resubmit job description" -> "receive approval"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"resubmit job description" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"post job"	[attrs="{'type': 'Activity', 'label': 'post job'}"];
+	"receive approval" -> "post job"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"receive approval" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"post job" -> "hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

@@ -1,0 +1,32 @@
+strict digraph "doc-8.2" {
+	graph [name="doc-8.2"];
+	"report a vacancy"	[attrs="{'type': 'Activity', 'label': 'report a vacancy'}"];
+	"create a job description from the information"	[attrs="{'type': 'Activity', 'label': 'create a job description from the information'}"];
+	"report a vacancy" -> "create a job description from the information"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the hr clerk"	[attrs="{'type': 'Actor', 'label': 'the hr clerk'}"];
+	"report a vacancy" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	ask	[attrs="{'type': 'Activity', 'label': 'ask'}"];
+	"create a job description from the information" -> ask	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create a job description from the information" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"submit the job description"	[attrs="{'type': 'Activity', 'label': 'submit the job description'}"];
+	ask -> "submit the job description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	ask -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"wait the approval"	[attrs="{'type': 'Activity', 'label': 'wait the approval'}"];
+	"submit the job description" -> "wait the approval"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"submit the job description" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"request a correction"	[attrs="{'type': 'Activity', 'label': 'request a correction'}"];
+	"wait the approval" -> "request a correction"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"wait the approval" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"correct the description"	[attrs="{'type': 'Activity', 'label': 'correct the description'}"];
+	"request a correction" -> "correct the description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the department"	[attrs="{'type': 'Actor', 'label': 'the department'}"];
+	"request a correction" -> "the department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"submit the description"	[attrs="{'type': 'Activity', 'label': 'submit the description'}"];
+	"correct the description" -> "submit the description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"correct the description" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"post the job"	[attrs="{'type': 'Activity', 'label': 'post the job'}"];
+	"submit the description" -> "post the job"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"submit the description" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"post the job" -> "the hr clerk"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

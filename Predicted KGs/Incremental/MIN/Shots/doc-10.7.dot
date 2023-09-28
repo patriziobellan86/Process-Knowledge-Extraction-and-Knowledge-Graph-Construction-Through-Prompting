@@ -1,0 +1,28 @@
+strict digraph "doc-10.7" {
+	graph [name="doc-10.7"];
+	"register the measurement at the go"	[attrs="{'type': 'Activity', 'label': 'register the measurement at the go'}"];
+	"examine the application of the mspn"	[attrs="{'type': 'Activity', 'label': 'examine the application of the mspn'}"];
+	"register the measurement at the go" -> "examine the application of the mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the mspn"	[attrs="{'type': 'Actor', 'label': 'the mspn'}"];
+	"register the measurement at the go" -> "the mspn"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject the application of the mspn"	[attrs="{'type': 'Activity', 'label': 'reject the application of the mspn'}"];
+	"examine the application of the mspn" -> "reject the application of the mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the go"	[attrs="{'type': 'Actor', 'label': 'the go'}"];
+	"examine the application of the mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm the application of the mspn"	[attrs="{'type': 'Activity', 'label': 'confirm the application of the mspn'}"];
+	"reject the application of the mspn" -> "confirm the application of the mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the application of the mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assign the mspn"	[attrs="{'type': 'Activity', 'label': 'assign the mspn'}"];
+	"confirm the application of the mspn" -> "assign the mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the application of the mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the mspo about the assignment of mspn"	[attrs="{'type': 'Activity', 'label': 'inform the mspo about the assignment of mspn'}"];
+	"assign the mspn" -> "inform the mspo about the assignment of mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assign the mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the mpo about the assignment of the mspn"	[attrs="{'type': 'Activity', 'label': 'inform the mpo about the assignment of the mspn'}"];
+	"inform the mspo about the assignment of mspn" -> "inform the mpo about the assignment of the mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform the mspo about the assignment of mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the sp about the assignment of mspn"	[attrs="{'type': 'Activity', 'label': 'inform the sp about the assignment of mspn'}"];
+	"inform the mpo about the assignment of the mspn" -> "inform the sp about the assignment of mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform the mpo about the assignment of the mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform the sp about the assignment of mspn" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

@@ -1,0 +1,34 @@
+strict digraph "doc-3.8" {
+	graph [name="doc-3.8"];
+	"submit a claim"	[attrs="{'type': 'Activity', 'label': 'submit a claim'}"];
+	"check the documents for completeness"	[attrs="{'type': 'Activity', 'label': 'check the documents for completeness'}"];
+	"submit a claim" -> "check the documents for completeness"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"a customer"	[attrs="{'type': 'Actor', 'label': 'a customer'}"];
+	"submit a claim" -> "a customer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"register the claim"	[attrs="{'type': 'Activity', 'label': 'register the claim'}"];
+	"check the documents for completeness" -> "register the claim"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the notification department at the car insurer"	[attrs="{'type': 'Actor', 'label': 'the notification department at the car insurer'}"];
+	"check the documents for completeness" -> "the notification department at the car insurer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the insurance"	[attrs="{'type': 'Activity', 'label': 'check the insurance'}"];
+	"register the claim" -> "check the insurance"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"register the claim" -> "the notification department at the car insurer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"perform an assessment"	[attrs="{'type': 'Activity', 'label': 'perform an assessment'}"];
+	"check the insurance" -> "perform an assessment"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the handling department"	[attrs="{'type': 'Actor', 'label': 'the handling department'}"];
+	"check the insurance" -> "the handling department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"authorise the repairs"	[attrs="{'type': 'Activity', 'label': 'authorise the repairs'}"];
+	"perform an assessment" -> "authorise the repairs"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"perform an assessment" -> "the handling department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"schedule the payment"	[attrs="{'type': 'Activity', 'label': 'schedule the payment'}"];
+	"authorise the repairs" -> "schedule the payment"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"a garage"	[attrs="{'type': 'Actor', 'label': 'a garage'}"];
+	"authorise the repairs" -> "a garage"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject the claim"	[attrs="{'type': 'Activity', 'label': 'reject the claim'}"];
+	"schedule the payment" -> "reject the claim"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"schedule the payment" -> "the handling department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send a letter to the customer"	[attrs="{'type': 'Activity', 'label': 'send a letter to the customer'}"];
+	"reject the claim" -> "send a letter to the customer"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the claim" -> "the handling department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"send a letter to the customer" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

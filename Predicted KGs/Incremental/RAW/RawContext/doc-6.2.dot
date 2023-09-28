@@ -1,0 +1,16 @@
+strict digraph "doc-6.2" {
+	graph [name="doc-6.2"];
+	"place order"	[attrs="{'type': 'Activity', 'label': 'place order'}"];
+	"process order"	[attrs="{'type': 'Activity', 'label': 'process order'}"];
+	"place order" -> "process order"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assembler ag"	[attrs="{'type': 'Actor', 'label': 'assembler ag'}"];
+	"place order" -> "assembler ag"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send invoice"	[attrs="{'type': 'Activity', 'label': 'send invoice'}"];
+	"process order" -> "send invoice"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	supplier	[attrs="{'type': 'Actor', 'label': 'supplier'}"];
+	"process order" -> supplier	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive invoice"	[attrs="{'type': 'Activity', 'label': 'receive invoice'}"];
+	"send invoice" -> "receive invoice"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send invoice" -> supplier	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive invoice" -> "assembler ag"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

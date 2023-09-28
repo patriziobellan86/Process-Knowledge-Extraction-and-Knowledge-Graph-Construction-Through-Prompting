@@ -1,0 +1,37 @@
+strict digraph "doc-9.4" {
+	graph [name="doc-9.4"];
+	"finalize dates"	[attrs="{'type': 'Activity', 'label': 'finalize dates'}"];
+	"update group calendars"	[attrs="{'type': 'Activity', 'label': 'update group calendars'}"];
+	"finalize dates" -> "update group calendars"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the coordination unit"	[attrs="{'type': 'Actor', 'label': 'the coordination unit'}"];
+	"finalize dates" -> "the coordination unit"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"create meeting folders"	[attrs="{'type': 'Activity', 'label': 'create meeting folders'}"];
+	"update group calendars" -> "create meeting folders"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the support officer"	[attrs="{'type': 'Actor', 'label': 'the support officer'}"];
+	"update group calendars" -> "the support officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"upload documents"	[attrs="{'type': 'Activity', 'label': 'upload documents'}"];
+	"create meeting folders" -> "upload documents"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create meeting folders" -> "the support officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"advise committee members"	[attrs="{'type': 'Activity', 'label': 'advise committee members'}"];
+	"upload documents" -> "advise committee members"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"upload documents" -> "the support officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"hold meeting"	[attrs="{'type': 'Activity', 'label': 'hold meeting'}"];
+	"advise committee members" -> "hold meeting"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"committee members"	[attrs="{'type': 'Actor', 'label': 'committee members'}"];
+	"advise committee members" -> "committee members"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"produce minutes"	[attrs="{'type': 'Activity', 'label': 'produce minutes'}"];
+	"hold meeting" -> "produce minutes"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"hold meeting" -> "committee members"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"conduct qa check"	[attrs="{'type': 'Activity', 'label': 'conduct qa check'}"];
+	"produce minutes" -> "conduct qa check"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the support office"	[attrs="{'type': 'Actor', 'label': 'the support office'}"];
+	"produce minutes" -> "the support office"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send minutes"	[attrs="{'type': 'Activity', 'label': 'send minutes'}"];
+	"conduct qa check" -> "send minutes"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"conduct qa check" -> "the coordination unit"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update departmental records"	[attrs="{'type': 'Activity', 'label': 'update departmental records'}"];
+	"send minutes" -> "update departmental records"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"all committee members"	[attrs="{'type': 'Actor', 'label': 'all committee members'}"];
+	"send minutes" -> "all committee members"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"update departmental records" -> "the support officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

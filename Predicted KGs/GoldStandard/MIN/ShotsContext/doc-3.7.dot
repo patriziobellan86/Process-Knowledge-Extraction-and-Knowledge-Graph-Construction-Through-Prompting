@@ -1,0 +1,23 @@
+strict digraph "doc-3.7" {
+	graph [name="doc-3.7"];
+	"search the police report"	[attrs="{'type': 'Activity', 'label': 'search the police report'}"];
+	"put the police report"	[attrs="{'type': 'Activity', 'label': 'put the police report'}"];
+	"search the police report" -> "put the police report"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"search the police report" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"calculate an initial claim estimate"	[attrs="{'type': 'Activity', 'label': 'calculate an initial claim estimate'}"];
+	"put the police report" -> "calculate an initial claim estimate"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"put the police report" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"create an action plan"	[attrs="{'type': 'Activity', 'label': 'create an action plan'}"];
+	"calculate an initial claim estimate" -> "create an action plan"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"claims handler"	[attrs="{'type': 'Actor', 'label': 'claims handler'}"];
+	"calculate an initial claim estimate" -> "claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"negotiate a settlement"	[attrs="{'type': 'Activity', 'label': 'negotiate a settlement'}"];
+	"create an action plan" -> "negotiate a settlement"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"create an action plan" -> "claims handler"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform of the outcome"	[attrs="{'type': 'Activity', 'label': 'inform of the outcome'}"];
+	"negotiate a settlement" -> "inform of the outcome"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"claims manager"	[attrs="{'type': 'Actor', 'label': 'claims manager'}"];
+	"negotiate a settlement" -> "claims manager"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform of the outcome" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

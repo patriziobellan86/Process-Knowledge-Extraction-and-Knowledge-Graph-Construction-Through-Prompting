@@ -1,0 +1,29 @@
+strict digraph "doc-10.14" {
+	graph [name="doc-10.14"];
+	"send the bill for the temporary continuation of the metering point operations"	[attrs="{'type': 'Activity', 'label': 'send the bill for the temporary continuation of the metering point operations'}"];
+	"examine the bill"	[attrs="{'type': 'Activity', 'label': 'examine the bill'}"];
+	"send the bill for the temporary continuation of the metering point operations" -> "examine the bill"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the mpoo"	[attrs="{'type': 'Actor', 'label': 'the mpoo'}"];
+	"send the bill for the temporary continuation of the metering point operations" -> "the mpoo"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm the invoice with payment advice"	[attrs="{'type': 'Activity', 'label': 'confirm the invoice with payment advice'}"];
+	"examine the bill" -> "confirm the invoice with payment advice"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the invoice of the mpoo or the mspo"	[attrs="{'type': 'Activity', 'label': 'reject the invoice of the mpoo or the mspo'}"];
+	"examine the bill" -> "reject the invoice of the mpoo or the mspo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the go"	[attrs="{'type': 'Actor', 'label': 'the go'}"];
+	"examine the bill" -> "the go"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"the go or the mpon"	[attrs="{'type': 'Actor', 'label': 'the go or the mpon'}"];
+	"examine the bill" -> "the go or the mpon"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the bill for the temporary continuation of measurement"	[attrs="{'type': 'Activity', 'label': 'send the bill for the temporary continuation of measurement'}"];
+	"send the bill for the temporary continuation of measurement" -> "examine the bill"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the mspo"	[attrs="{'type': 'Actor', 'label': 'the mspo'}"];
+	"send the bill for the temporary continuation of measurement" -> "the mspo"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the bill for additional readings"	[attrs="{'type': 'Activity', 'label': 'send the bill for additional readings'}"];
+	"send the bill for additional readings" -> "examine the bill"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send the bill for additional readings" -> "the mspo"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the bill for the equipment acquisition"	[attrs="{'type': 'Activity', 'label': 'send the bill for the equipment acquisition'}"];
+	"send the bill for the equipment acquisition" -> "examine the bill"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the mpoo or the mpon"	[attrs="{'type': 'Actor', 'label': 'the mpoo or the mpon'}"];
+	"send the bill for the equipment acquisition" -> "the mpoo or the mpon"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirm the invoice with payment advice" -> "the go or the mpon"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject the invoice of the mpoo or the mspo" -> "the go or the mpon"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

@@ -1,0 +1,31 @@
+strict digraph "doc-10.11" {
+	graph [name="doc-10.11"];
+	"request measurements"	[attrs="{'type': 'Activity', 'label': 'request measurements'}"];
+	"check request"	[attrs="{'type': 'Activity', 'label': 'check request'}"];
+	"request measurements" -> "check request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	go	[attrs="{'type': 'Actor', 'label': 'go'}"];
+	"request measurements" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	msp	[attrs="{'type': 'Actor', 'label': 'msp'}"];
+	"check request" -> msp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"deny request, perform measurement"	[attrs="{'type': 'Activity', 'label': 'deny request, perform measurement'}"];
+	"check request" -> "deny request, perform measurement"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deny request"	[attrs="{'type': 'Activity', 'label': 'deny request'}"];
+	"inform go of failure"	[attrs="{'type': 'Activity', 'label': 'inform go of failure'}"];
+	"deny request" -> "inform go of failure"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deny request" -> msp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"perform measurement"	[attrs="{'type': 'Activity', 'label': 'perform measurement'}"];
+	"transmit measured values"	[attrs="{'type': 'Activity', 'label': 'transmit measured values'}"];
+	"perform measurement" -> "transmit measured values"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"perform measurement" -> msp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform go of failure" -> msp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"process measured values"	[attrs="{'type': 'Activity', 'label': 'process measured values'}"];
+	"transmit measured values" -> "process measured values"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"transmit measured values" -> msp	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send changed values"	[attrs="{'type': 'Activity', 'label': 'send changed values'}"];
+	"process measured values" -> "send changed values"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"process measured values" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"transmit readings"	[attrs="{'type': 'Activity', 'label': 'transmit readings'}"];
+	"send changed values" -> "transmit readings"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send changed values" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"transmit readings" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

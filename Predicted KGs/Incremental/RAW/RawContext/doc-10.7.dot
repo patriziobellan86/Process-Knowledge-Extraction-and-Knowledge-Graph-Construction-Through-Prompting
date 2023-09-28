@@ -1,0 +1,25 @@
+strict digraph "doc-10.7" {
+	graph [name="doc-10.7"];
+	"register measurement"	[attrs="{'type': 'Activity', 'label': 'register measurement'}"];
+	"examine application"	[attrs="{'type': 'Activity', 'label': 'examine application'}"];
+	"register measurement" -> "examine application"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	mspn	[attrs="{'type': 'Actor', 'label': 'mspn'}"];
+	"register measurement" -> mspn	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"reject/confirm application"	[attrs="{'type': 'Activity', 'label': 'reject/confirm application'}"];
+	"examine application" -> "reject/confirm application"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	go	[attrs="{'type': 'Actor', 'label': 'go'}"];
+	"examine application" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assign mspn"	[attrs="{'type': 'Activity', 'label': 'assign mspn'}"];
+	"reject/confirm application" -> "assign mspn"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject/confirm application" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform mspo"	[attrs="{'type': 'Activity', 'label': 'inform mspo'}"];
+	"assign mspn" -> "inform mspo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assign mspn" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform mpo"	[attrs="{'type': 'Activity', 'label': 'inform mpo'}"];
+	"inform mspo" -> "inform mpo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform mspo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform sp"	[attrs="{'type': 'Activity', 'label': 'inform sp'}"];
+	"inform mpo" -> "inform sp"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform mpo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"inform sp" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

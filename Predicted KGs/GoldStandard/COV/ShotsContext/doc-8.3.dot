@@ -1,0 +1,23 @@
+strict digraph "doc-8.3" {
+	graph [name="doc-8.3"];
+	"detect a number of personnel requirements"	[attrs="{'type': 'Activity', 'label': 'detect a number of personnel requirements'}"];
+	"report the vacancy"	[attrs="{'type': 'Activity', 'label': 'report the vacancy'}"];
+	"detect a number of personnel requirements" -> "report the vacancy"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the head of the functional department"	[attrs="{'type': 'Actor', 'label': 'the head of the functional department'}"];
+	"detect a number of personnel requirements" -> "the head of the functional department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"get the job description for review"	[attrs="{'type': 'Activity', 'label': 'get the job description for review'}"];
+	"report the vacancy" -> "get the job description for review"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"report the vacancy" -> "the head of the functional department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"advertise the job description"	[attrs="{'type': 'Activity', 'label': 'advertise the job description'}"];
+	"get the job description for review" -> "advertise the job description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the personnel department"	[attrs="{'type': 'Actor', 'label': 'the personnel department'}"];
+	"get the job description for review" -> "the personnel department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"ask for corrections"	[attrs="{'type': 'Activity', 'label': 'ask for corrections'}"];
+	"advertise the job description" -> "ask for corrections"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"advertise the job description" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"approve the job description"	[attrs="{'type': 'Activity', 'label': 'approve the job description'}"];
+	"ask for corrections" -> "approve the job description"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"ask for corrections" -> "the head of the functional department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"approve the job description" -> "the head of the functional department"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

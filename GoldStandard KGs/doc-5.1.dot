@@ -1,0 +1,25 @@
+strict digraph "doc-5.1" {
+	graph [name="doc-5.1"];
+	"receive a customer request for a loan amount"	[attrs="{'type': 'Activity', 'label': 'receive a customer request for a loan amount'}"];
+	"assess the request"	[attrs="{'type': 'Activity', 'label': 'assess the request'}"];
+	"receive a customer request for a loan amount" -> "assess the request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"receive a customer request for a loan amount" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"approve the loan"	[attrs="{'type': 'Activity', 'label': 'approve the loan'}"];
+	"assess the request" -> "approve the loan"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deny the loan"	[attrs="{'type': 'Activity', 'label': 'deny the loan'}"];
+	"assess the request" -> "deny the loan"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send the request"	[attrs="{'type': 'Activity', 'label': 'send the request'}"];
+	"assess the request" -> "send the request"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"the risk assessment web service"	[attrs="{'type': 'Actor', 'label': 'the risk assessment web service'}"];
+	"assess the request" -> "the risk assessment web service"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"receive feedback"	[attrs="{'type': 'Activity', 'label': 'receive feedback'}"];
+	"approve the loan" -> "receive feedback"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"approve the loan" -> "the risk assessment web service"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"deny the loan" -> "receive feedback"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deny the loan" -> "the risk assessment web service"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the request" -> "receive feedback"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"send the request" -> "the risk assessment web service"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"the assessor or approver"	[attrs="{'type': 'Actor', 'label': 'the assessor or approver'}"];
+	"receive feedback" -> "the assessor or approver"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

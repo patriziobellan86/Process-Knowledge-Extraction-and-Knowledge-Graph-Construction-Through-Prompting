@@ -1,0 +1,26 @@
+strict digraph "doc-3.3" {
+	graph [name="doc-3.3"];
+	"register a claim"	[attrs="{'type': 'Activity', 'label': 'register a claim'}"];
+	"examine the claim"	[attrs="{'type': 'Activity', 'label': 'examine the claim'}"];
+	"register a claim" -> "examine the claim"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"not defined"	[attrs="{'type': 'Actor', 'label': 'not defined'}"];
+	"register a claim" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"write a settlement recommendation"	[attrs="{'type': 'Activity', 'label': 'write a settlement recommendation'}"];
+	"examine the claim" -> "write a settlement recommendation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"a claims officer"	[attrs="{'type': 'Actor', 'label': 'a claims officer'}"];
+	"examine the claim" -> "a claims officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"check the recommendation"	[attrs="{'type': 'Activity', 'label': 'check the recommendation'}"];
+	"write a settlement recommendation" -> "check the recommendation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"write a settlement recommendation" -> "a claims officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"mark the claim as ok or not ok"	[attrs="{'type': 'Activity', 'label': 'mark the claim as ok or not ok'}"];
+	"check the recommendation" -> "mark the claim as ok or not ok"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"a senior claims officer"	[attrs="{'type': 'Actor', 'label': 'a senior claims officer'}"];
+	"check the recommendation" -> "a senior claims officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the claim back"	[attrs="{'type': 'Activity', 'label': 'send the claim back'}"];
+	"mark the claim as ok or not ok" -> "send the claim back"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"proceed with the claim handling process"	[attrs="{'type': 'Activity', 'label': 'proceed with the claim handling process'}"];
+	"mark the claim as ok or not ok" -> "proceed with the claim handling process"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"mark the claim as ok or not ok" -> "a senior claims officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"send the claim back" -> "a senior claims officer"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"proceed with the claim handling process" -> "not defined"	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}

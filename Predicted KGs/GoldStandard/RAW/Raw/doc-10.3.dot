@@ -1,0 +1,48 @@
+digraph "doc-10.3" {
+	graph [name="doc-10.3"];
+	deregister	[attrs="{'type': 'Activity', 'label': 'deregister'}"];
+	"verify the deregistration"	[attrs="{'type': 'Activity', 'label': 'verify the deregistration'}"];
+	deregister -> "verify the deregistration"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"reject the deregistration of the mpoo"	[attrs="{'type': 'Activity', 'label': 'reject the deregistration of the mpoo'}"];
+	"verify the deregistration" -> "reject the deregistration of the mpoo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the deregistration of the mpoo"	[attrs="{'type': 'Activity', 'label': 'confirm the deregistration of the mpoo'}"];
+	"verify the deregistration" -> "confirm the deregistration of the mpoo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"prepare the readmission of the measuring point"	[attrs="{'type': 'Activity', 'label': 'prepare the readmission of the measuring point'}"];
+	"reject the deregistration of the mpoo" -> "prepare the readmission of the measuring point"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the deregistration of the mpoo" -> "prepare the readmission of the measuring point"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"confirm the continuation"	[attrs="{'type': 'Activity', 'label': 'confirm the continuation'}"];
+	"prepare the readmission of the measuring point" -> "confirm the continuation"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"perform the equipment acquisition and/or equipment changes"	[attrs="{'type': 'Activity', 'label': 'perform the equipment acquisition and/or equipment changes'}"];
+	"confirm the continuation" -> "perform the equipment acquisition and/or equipment changes"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"assign the go as mpo"	[attrs="{'type': 'Activity', 'label': 'assign the go as mpo'}"];
+	"perform the equipment acquisition and/or equipment changes" -> "assign the go as mpo"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"inform about the end of the assignment of the mpoo and the beginning of the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'inform about the end of the assignment of the mpoo and the beginning of the assignment of the go'}"];
+	"assign the go as mpo" -> "inform about the end of the assignment of the mpoo and the beginning of the assignment of the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"informs about the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'informs about the assignment of the go'}"];
+	"inform about the end of the assignment of the mpoo and the beginning of the assignment of the go" -> "informs about the assignment of the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"informs about the assignment of the go" -> "informs about the assignment of the go"	[attrs="{'type': 'flow', 'label': 'flow'}"];
+	"deregisters at the go"	[attrs="{'type': 'Activity', 'label': 'deregisters at the go'}"];
+	mpoo	[attrs="{'type': 'Actor', 'label': 'mpoo'}"];
+	"deregisters at the go" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"verifies the deregistration"	[attrs="{'type': 'Activity', 'label': 'verifies the deregistration'}"];
+	go	[attrs="{'type': 'Actor', 'label': 'go'}"];
+	"verifies the deregistration" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"rejects the deregistration of the mpoo or the go preliminarily confirms the deregistration of the mpoo"	[attrs="{'type': 'Activity', 'label': 'rejects the deregistration of the mpoo or the go preliminarily confirms the deregistration of the \
+mpoo'}"];
+	"rejects the deregistration of the mpoo or the go preliminarily confirms the deregistration of the mpoo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"prepares the readmission of the measuring point"	[attrs="{'type': 'Activity', 'label': 'prepares the readmission of the measuring point'}"];
+	"prepares the readmission of the measuring point" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"confirmes the continuation to the mpoo"	[attrs="{'type': 'Activity', 'label': 'confirmes the continuation to the mpoo'}"];
+	"confirmes the continuation to the mpoo" -> mpoo	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	" performs the equipment acquisition and/or equipment changes"	[attrs="{'type': 'Activity', 'label': ' performs the equipment acquisition and/or equipment changes'}"];
+	" performs the equipment acquisition and/or equipment changes" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"assigns the go as mpo"	[attrs="{'type': 'Activity', 'label': 'assigns the go as mpo'}"];
+	"assigns the go as mpo" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs the mpoo about the end of the assignment of the mpoo and the beginning of the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'informs the mpoo about the end of the assignment of the mpoo and the beginning of the assignment \
+of the go'}"];
+	"informs the mpoo about the end of the assignment of the mpoo and the beginning of the assignment of the go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs the mspo about the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'informs the mspo about the assignment of the go'}"];
+	"informs the mspo about the assignment of the go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+	"informs the sp about the assignment of the go"	[attrs="{'type': 'Activity', 'label': 'informs the sp about the assignment of the go'}"];
+	"informs the sp about the assignment of the go" -> go	[attrs="{'type': 'actor performer', 'label': 'actor performer'}"];
+}
